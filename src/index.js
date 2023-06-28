@@ -1,22 +1,29 @@
-const express = require('express')
-const morgan = require('morgan')
-const path = require('path')
-const handlebars = require('express-handlebars')
-const app = express()
+// Node-modules import
+const express = require('express');
+const morgan = require('morgan');
+const path = require('path');
+const handlebars = require('express-handlebars');
+const app = express();
 
-// Static folder
-app.use(express.static(path.join(__dirname, 'public')))
+// Local import
+const route = require('./routes');
+const db = require('./config/db');
+
+// Connect to Database
+db.connectToDb();
+
+// Set tatic folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Engine express-handlebars setup
-app.engine('handlebars', handlebars.engine())
-app.set('view engine', 'handlebars')
-app.set('views', path.join(__dirname,'resources/views'))
+app.engine('handlebars', handlebars.engine());
+app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname,'resources/views'));
 
 // HTTP logger
-app.use(morgan('combined'))
+app.use(morgan('combined'));
 
-app.get('/', function (req, res) {
-  res.render('home')
-})
+// Routes init
+route(app);
 
 app.listen(3000)
