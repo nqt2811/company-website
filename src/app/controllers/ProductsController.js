@@ -12,6 +12,8 @@ class ProductsController {
             })
             .catch(next);
     }
+
+    
 }
 
 module.exports = new ProductsController;
