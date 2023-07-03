@@ -13,8 +13,9 @@ const db = require('./config/db');
 db.connectToDb();
 
 // Set tatic folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/css')));
 app.use(express.static(path.join(__dirname, 'public/img')));
+app.use(express.static(path.join(__dirname, 'public/fonts')));
 // Engine express-handlebars setup
 app.engine('handlebars', handlebars.engine());
 app.set('view engine', 'handlebars');

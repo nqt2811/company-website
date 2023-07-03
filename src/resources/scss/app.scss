@@ -1,0 +1,98 @@
+@import 'variables';
+
+:root {
+    --white-color: #fff;
+    --text-color: #333;
+    --black-color: #000;
+    --green-color: #458a2e;
+    --blue-color: #00b7ee;
+    --background-color: ;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--blue-color);
+    align-items: center;
+    margin: 0 auto;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.containter {
+    margin: 12px 8px;
+    position: relative;
+}
+
+// Header SCSS
+#header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-name {
+    background-color: #fff;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #000;
+}
+
+.logo-name img {
+    margin: 20px 20px;
+}
+
+.logo-name h1 {
+    font-size: 40px;
+    line-height: 80px;
+}
+
+.header-navbar {
+    margin: 12px auto;
+    width: 90%;
+}
+
+.header-navbar-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background-color: #fff;
+    padding: 8px 8px;
+    border: 2px solid #000;
+    border-radius: 12px;
+}
+
+.header-navbar-list li{
+    text-decoration: none;
+    margin: 8px 12px;
+}
+
+.header-navbar-list li a{
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+}
