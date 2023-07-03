@@ -1,14 +1,7 @@
+// Import common variables
 @import 'variables';
 
-:root {
-    --white-color: #fff;
-    --text-color: #333;
-    --black-color: #000;
-    --green-color: #458a2e;
-    --blue-color: #00b7ee;
-    --background-color: ;
-}
-
+// Basic SCSS begin
 * {
     box-sizing: inherit;
 }
@@ -21,7 +14,7 @@ html {
 }
 
 body {
-    background-color: var(--blue-color);
+    background-color: $blue-color;
     align-items: center;
     margin: 0 auto;
 }
@@ -40,14 +33,16 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+// Basic SCSS end here
 
-.containter {
+#content {
     margin: 12px 8px;
     position: relative;
 }
 
-// Header SCSS
+// Header SCSS begin
 #header {
+    font-size: 1.8rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,6 +58,7 @@ body {
 
 .logo-name img {
     margin: 20px 20px;
+    padding: 20px 0;
 }
 
 .logo-name h1 {
@@ -96,3 +92,104 @@ body {
     text-decoration: none;
     color: #000;
 }
+// Header SCSS end here
+
+// Content SCSS begin
+
+// Content SCSS end here
+
+// Footer SCSS begin
+
+// Footer SCSS end here
+
+
+
+// Database ADMIN begin
+#database {
+    display: flex;
+    font-size: 1.8rem;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#database ul li {
+    margin-top: 4px;
+}
+
+#database .table-list-product {
+    flex-grow: 1;
+}
+
+#database table {
+    background-color: #f8f8f8;
+    border-collapse: collapse;
+}
+  
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.data-options a{
+    margin: 0 12px;
+}
+// Database ADMIN end here
+
+// Data Field SCSS begin
+.data-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.data-form h1 {
+    margin: 8px auto;
+}
+
+.data-form .field {
+    display: flex;
+    font-size: 1.8rem;
+    min-width: 50%;
+    margin: 4px auto;
+}
+
+.data-form .form-label {
+    min-width: 160px;
+}
+
+.data-form .form-control {
+    flex-grow: 1;
+}
+
+.data-form .create-button {
+    justify-content: center;
+    line-height: 40px;
+    height: 40px;
+    background-color: blue;
+}
+
+.data-form .create-button:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+// Data Field SCSS end here 
+
+// Confirm delete begin
+.confirm-delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.confirm-delete button {
+    min-width: 200px;
+    padding: 20px 20px;
+}
+
+.confirm-delete button:hover {
+    cursor: pointer;
+}
+// Confirm delete end here

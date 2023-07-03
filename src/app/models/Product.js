@@ -1,18 +1,20 @@
 const { default: mongoose } = require("mongoose");
+const slug = require('mongoose-slug-generator');
+mongoose.plugin(slug);
 
 const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
 
 const Product = new Schema({
-    _id: ObjectId,
-    image: String,
+    image: { type: String, slug: "shortname"},
+    shortname: String,
     name: String,
     formula: String,
     origin: String,
-    using: String,
+    using: Array,
     description: Array,
     pack: String,
-    preserve: String
+    preserve: Array,
+    slug: { type: String, slug: "shortname"},
 });
 
 module.exports = mongoose.model('Product', Product);

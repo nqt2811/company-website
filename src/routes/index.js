@@ -6,9 +6,10 @@ const contactsRouter = require('./contacts');
 
 function route(app) {
     app.use('/contacts', contactsRouter);
-    app.use('/administrator',adminRouter);
+    app.use('/administrator/database',adminRouter);
     app.use('/products', productDetailRouter);
     app.use('/products', productsRouter);
+    app.use('/home', siteRouter);
     app.use('/', siteRouter);
 }
 

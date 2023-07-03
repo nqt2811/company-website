@@ -1,0 +1,49 @@
+<form class="data-form" action="/administrator/database/{{product._id}}/update?_method=PUT" method="POST">
+    <h1>Sửa thông tin sản phẩm</h1>
+    <div class="field">
+        <label for="shortname" class="form-label">Mã sản phẩm: </label>
+        <input type="text" class="form-control" value="{{product.shortname}}" id="shortname" name="shortname">
+    </div>
+    <div class="field">
+        <label for="name" class="form-label">Tên sản phẩm: </label>
+        <input type="text" class="form-control" value="{{product.name}}" id="name" name="name">
+    </div>
+    <div class="field">
+        <label for="formula" class="form-label">Công thức hóa học: </label>
+        <input type="text" class="form-control" value="{{product.formula}}" id="formula" name="formula">
+    </div>
+    <div class="field array-input-field">
+        <label for="using" class="form-label">Ứng dụng: </label>
+        <textarea class="form-control" value="" id="using" name="using" rows="5">
+        {{~#each product.using}}
+        {{~this}}
+        {{/each}}
+        </textarea>
+    </div>
+    <div class="field">
+        <label for="origin" class="form-label">Xuất xứ: </label>
+        <input type="text" class="form-control" value="{{product.origin}}" id="origin" name="origin">
+    </div>
+    <div class="field">
+        <label for="pack" class="form-label">Đóng gói: </label>
+        <input type="text" class="form-control" value="{{product.pack}}" id="pack" name="pack">
+    </div>
+    <div class="field array-input-field">
+        <label for="description" class="form-label">Tính chất: </label>
+        <textarea class="form-control" value="" id="description" name="description" rows="5">
+        {{~#each product.description}}
+        {{~this}}
+        {{/each}}
+        </textarea>
+    </div>
+    <div class="field array-input-field">
+        <label for="preserve" class="form-label">Bảo quản: </label>
+        <textarea class="form-control" value="" id="preserve" name="preserve" rows="5">
+        {{~#each product.preserve}}
+        {{~this}}
+        {{/each}}
+        </textarea>
+    </div>
+    <button type="submit" class="create-button field">Sửa</button>
+</form>
+
