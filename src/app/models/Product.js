@@ -1,6 +1,5 @@
 const { default: mongoose } = require("mongoose");
 const slug = require('mongoose-slug-generator');
-mongoose.plugin(slug);
 
 const Schema = mongoose.Schema;
 
@@ -14,7 +13,9 @@ const Product = new Schema({
     description: Array,
     pack: String,
     preserve: Array,
-    slug: { type: String, slug: "shortname"},
+    slug: { type: String, slug: "shortname" },
 });
+
+mongoose.plugin(slug);
 
 module.exports = mongoose.model('Product', Product);

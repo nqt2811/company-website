@@ -4,15 +4,15 @@ const { mongooseToObj } = require('../../util/mongoose');
 
 class AdministratorController {
 
-    index (req, res, next) {
+    index(req, res, next) {
         res.render('database/database');
     }
 
-    create (req, res, next) {
+    create(req, res, next) {
         res.render('database/database-create');
     }
 
-    store (req, res, next) {
+    store(req, res, next) {
         const formData = req.body;
         formData.using = formData.using.split('\r\n');
         formData.description = formData.description.split('\r\n');
@@ -23,7 +23,7 @@ class AdministratorController {
             .catch(next);
     }
 
-    async showTableListProducts (req, res, next) {
+    async showTableListProducts(req, res, next) {
         Product.find({})
             .then(products => res.render('database/database', {
                 products: multipleMongooseObj(products),
@@ -34,7 +34,7 @@ class AdministratorController {
             .catch(next);
     }
 
-    edit (req, res, next) {
+    edit(req, res, next) {
         Product.findById(req.params.id)
             .then(product => res.render('database/edit', {
                 product: mongooseToObj(product),
@@ -42,13 +42,13 @@ class AdministratorController {
             .catch(next);
     }
 
-    update (req, res, next) {
+    update(req, res, next) {
         Product.updateOne({_id: req.params.id}, req.body)
             .then(() => res.redirect('/administrator/database'))
             .catch(next);
     }
 
-    delete (req, res, next) {
+    delete(req, res, next) {
         Product.deleteOne({_id: req.params.id})
             .then(() => res.redirect('/administrator/database'))
             .catch(next);

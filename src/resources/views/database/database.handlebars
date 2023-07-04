@@ -2,8 +2,6 @@
     <h1>My Database</h1>
     <ul>
         <li><a href="/administrator/database/create">Thêm sản phẩm</a></li>
-        <li><a href=""></a>Xóa sản phẩm</li>
-        <li><a href=""></a>Cập nhật sản phẩm</li>
     </ul>
 
     <div class="table-list-product">
@@ -27,6 +25,10 @@
                         <a href="/administrator/database/{{this._id}}/edit">Sửa</a>
                         <a href="" data-bs-toggle="modal" data-bs-target="#confirm-delete" data-bs-id="{{this._id}}">Xóa</a>
                     </td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="5">Không có dữ liệu</td>
                 </tr>
                 {{/each}}
             </tbody>
