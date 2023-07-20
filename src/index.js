@@ -20,13 +20,14 @@ app.use(express.static(path.join(__dirname, 'public/img')));
 app.use(express.static(path.join(__dirname, 'public/fonts')));
 
 // Engine express-handlebars setup
-handlebars.create({
+const hbs = handlebars.create({
     helpers: {
         sum: (a,b) => a+b,
+        breakline: content => content.join('<br>')
     }
 });
 
-app.engine('handlebars', handlebars.engine());
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname,'resources/views'));
 
@@ -40,8 +41,9 @@ app.use(bodyParser.json());
 // Method-override
 app.use(methodOverride('_method'));
 
-
 // Routes init
 route(app);
 
 app.listen(3000)
+
+module.exports = handlebars;

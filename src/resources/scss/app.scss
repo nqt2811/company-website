@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    background-color: $blue-color;
+    background-color: $background-color;
     align-items: center;
     margin: 0 auto;
 }
@@ -33,73 +33,388 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
-// Basic SCSS end here
 
-#content {
-    margin: 12px 8px;
+.wrapper {
     position: relative;
+    box-sizing: border-box;
+    height: 100%;
 }
+// Basic SCSS end here
 
 // Header SCSS begin
 #header {
-    font-size: 1.8rem;
+    min-width: 100%;
+    height: 86px;
+    min-height: 86px;
+    background-color: $white-color;
+    border-radius: 0px 0px 0px 0px;
+    border: solid rgba(193,193,193,1);
+    border-width: 0px 0px 1px 0px;
+    line-height: 48px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
 }
 
-.logo-name {
-    background-color: #fff;
-    padding: 20px 20px;
+#header .header-logo {
+    margin: 19px 46px;
+}
+
+#header .navbar-list {
     display: flex;
-    justify-content: center;
-    border: 1px solid #000;
-}
-
-.logo-name img {
-    margin: 20px 20px;
-    padding: 20px 0;
-}
-
-.logo-name h1 {
-    font-size: 40px;
-    line-height: 80px;
-}
-
-.header-navbar {
-    margin: 12px auto;
-    width: 90%;
-}
-
-.header-navbar-list {
     list-style: none;
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    background-color: #fff;
-    padding: 8px 8px;
-    border: 2px solid #000;
-    border-radius: 12px;
+    font-size: 16px;
+    margin-right: 16px;
 }
 
-.header-navbar-list li{
-    text-decoration: none;
-    margin: 8px 12px;
-}
-
-.header-navbar-list li a{
+#header .navbar-list li {
     font-weight: 500;
+    padding: 0 32px;
+    margin: 19px auto;
+    list-style: none;
+}
+
+#header .navbar-list li a{
     text-decoration: none;
-    color: #000;
+    color: $text-color;
 }
 // Header SCSS end here
 
 // Content SCSS begin
+#content {
+    position: relative;
+    top: 86px;
+    min-height: calc(100vh - 246px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.service-icons {
+    margin: 80px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.services-homepage {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    flex-wrap: wrap;
+}
+
+.services-homepage i {
+    margin: 16px auto;
+    font-size: 80px;
+}
+
+.services-homepage span {
+    color: $black-color;
+    max-width: 152px;
+    font-size: 1.6rem;
+}
+
+
+// Illustration image start here
+.services-text {
+    padding: 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: rgba(255,255,255,0.9);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    border: 2px solid white; 
+    border-radius: 5px;
+}
+
+.illustration-img-contacts {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 320px;
+    background: url('contacts.jpg') no-repeat right top;
+}
+
+.illustration-img-contacts::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.illustration-img-homepage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 320px;
+    background: url('homepage.jpg') no-repeat right top;
+}
+
+.illustration-img-homepage::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.illustration-img-products {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 320px;
+    background: url('products.jpg') no-repeat right top;
+}
+
+.illustration-img-products::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.illustration-img-services {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 320px;
+    background: url('services.jpg') no-repeat right top;
+}
+
+.illustration-img-services::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+// Illustration image end here
+#content .main-content {
+    margin-top: 320px;
+    width: 80%;
+}
+
+.content-section {
+    margin: 80px auto;
+}
+
+.content-section .content-header{
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.content-section .content-slogan {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.content-section .content-section-body .content-information {
+    margin: 16px auto;
+    text-align: justify;
+    font-size: 1.6rem;
+}
+
+/* Container for the product cards */
+.show-products {
+    padding-top: 20px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: s;
+}
+
+.product-card {
+    width: calc(25% - 10px);
+    margin: 0 5px 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.product-card-description {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    flex-grow: 1;
+}
+
+.detail-button {
+    font-weight: 500;
+    display: block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.product-detail {
+    padding: 20px auto;
+    display: flex;
+}
+
+#contact-page .heading-contacts{
+    margin: 40px auto;
+    text-align: center;
+    font-size: 28px;
+}
+
+#contact-page i {
+    margin: 0 8px;
+}
+
+#contact-page .contact-content p {
+    font-size: 16px;
+    margin: 30px auto;
+}
+
+#contact-page span {
+    font-size: 12px;
+}
+
+#contact-page .contact-content {
+    display: flex;
+    padding-bottom: 40px;
+    justify-content: space-between;
+}
+
+.col2 {
+    width: 45%;
+}
+
+#contact-form {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#contact-form label {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#contact-form input {
+    line-height: 24px;
+}
 // Content SCSS end here
 
 // Footer SCSS begin
+#footer {
+    position: relative;
+    bottom: -86px;
+    left: 0;
+    background-color: $black-color;
+    color: $white-color;
+    width: 100%;
+    height: 200px;
+}
 
+#footer .footer-content {
+    height: 168px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+#footer .footer-content .footer-companyname img {
+    padding: 4px 8px;
+}
+
+#footer .footer-content .footer-companyname span {
+    font-size: 1.6rem;
+}
+
+#footer .footer-content .footer-information li{
+    padding: 4px 0;
+    font-size: 1.4rem;
+}
+
+#footer ul {
+    padding-left: 0;
+}
+
+#footer li{
+    list-style: none;
+}
+
+#footer i{
+    padding: 0 8px;
+}
+
+#footer .footer-information li a{
+    color: #fff;
+}
+
+#footer .footer-content .footer-connects span {
+    padding: 20px 8px;
+    font-size: 1.6rem;
+}
+
+#footer .footer-content .footer-connects li {
+    padding: 4px 8px;
+}
+#footer .footer-copyright {
+    height: 32px;
+    background-color: $footer-copyright-color;
+    font-size: 12px;
+    text-align: center;
+}
+
+#footer .footer-copyright span {
+    line-height: 32px;
+}
+
+#footer .footer-copyright span a {
+    color: $white-color;
+    text-decoration: none;
+}
+
+#footer .footer-copyright span a:hover {
+    color: $white-color-hover;
+}
 // Footer SCSS end here
 
 

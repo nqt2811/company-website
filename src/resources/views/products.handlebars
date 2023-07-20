@@ -1,16 +1,15 @@
-<div class="show-products">
+<div class="illustration-img-products"><span class="services-text">SẢN PHẨM</span></div>
+<div class="main-content">
+    <div class="show-products">
     {{#each products}}
-    <div class="col">
-        <div class="card h-100  text-center mb-3">
+        <div class="product-card">
             <a href="/products/{{this.slug}}">
-                <img src="/img/khaivan-logo.png" class="card-img-top" alt="product image">
+                <img src="/khaivan-logo.png" class="card-img-top" alt="product image">
             </a>
-            <div class="card-body">
-                <h5 class="card-title">{{this.name}}</h5>
-                <p class="card-text">{{this.using}}</p>
-                <a href="/products/{{this.slug}}" class="btn btn-primary ">Chi tiết sản phẩm</a>
-            </div>
+            <h2 class="product-card-name">{{this.name}}</h2>
+            <p class="product-card-description">{{{breakline this.using}}}</p>
+            <a href="/products/{{this.slug}}" class="detail-button">Chi tiết sản phẩm</a>
         </div>
-    </div>
     {{/each}}
+    </div>
 </div>
