@@ -9,8 +9,9 @@
 html {
     font-size: 62.5%;
     line-height: 1.6rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito', sans-serif;
     box-sizing: border-box;
+    line-height: 1.6;
 }
 
 body {
@@ -118,9 +119,14 @@ body {
     font-size: 1.6rem;
 }
 
-
+.cpn-name {
+    font-style: italic;
+    font-weight: 700;
+    color: $green-logo-color;
+}
 // Illustration image start here
 .services-text {
+    font-style: italic;
     padding: 32px;
     position: absolute;
     top: 50%;
@@ -129,7 +135,6 @@ body {
     font-size: 48px;
     color: rgba(255,255,255,0.9);
     text-align: center;
-    text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     border: 2px solid white; 
@@ -222,21 +227,63 @@ body {
 }
 
 .content-section .content-header{
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     text-align: center;
+    font-weight: 700;
+    font-style: italic;
 }
 
 .content-section .content-slogan {
     font-size: 1.8rem;
     text-align: center;
+    font-style: italic;
+}
+
+.content-section .content-section-body {
+    margin: 72px auto;
+    display: flex;
+    align-items: flex-start;
+}
+
+.content-section .content-section-body img {
+    border-radius: 5px;
 }
 
 .content-section .content-section-body .content-information {
     margin: 16px auto;
     text-align: justify;
     font-size: 1.6rem;
+    position: relative;
 }
 
+.cpn-overview {
+    min-height: 330px;
+}
+
+.homepage-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-redirect {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 36px;
+    border-radius: 20px;
+    padding: 8px 20px;
+    text-decoration: none;
+    background-color: $blue-logo-color;
+    color: $text-color;
+}
+
+.submit-button {
+    border: 1px solid;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 8px;
+    background-color: $blue-logo-color;
+}
 /* Container for the product cards */
 .show-products {
     padding-top: 20px;
