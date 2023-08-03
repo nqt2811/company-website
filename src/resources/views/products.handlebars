@@ -4,7 +4,7 @@
     {{#each products}}
         <div class="product-card">
             <a href="/products/{{this.slug}}">
-                <img src="/khaivan-logo.png" class="card-img-top" alt="product image">
+                <img src="/products/{{this.image}}.png" class="card-img-top" alt="product image">
             </a>
             <h2 class="product-card-name">{{this.name}}</h2>
             <p class="product-card-description">{{{breakline this.using}}}</p>
@@ -12,4 +12,7 @@
         </div>
     {{/each}}
     </div>
+    <script>
+        document.title = 'Sản phẩm - Công ty TNHH TM - KT Khải Vân'
+    </script>
 </div>

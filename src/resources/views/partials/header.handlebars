@@ -1,5 +1,8 @@
 <img class="header-logo" src="/khaivan-logo.png" alt="Khải Vân logo">
 <div class="header-navbar">
+  <div id="menu-btn" class="menu-btn-navbar">
+    <i class="fa-solid fa-bars" style="color: #030303;"></i>
+  </div>
   <ul class="navbar-list">
     <li><a href="/home" title="Trang chủ" >TRANG CHỦ</a></li>
     <li><a href="/products" title="Sản phẩm">SẢN PHẨM</a></li>
@@ -8,3 +11,10 @@
     <li><a href="/about-us" title="Về chúng tôi">VỀ CHÚNG TÔI</a></li>
   </ul>
 </div>
+<script>
+  const menuButton = document.getElementById("menu-btn");
+  const navbarList = document.querySelector(".navbar-list");
+  menuButton.onclick = function () {
+    navbarList.style.display = 'block';
+  }
+</script>
